@@ -1,0 +1,22 @@
+---
+alwaysApply: false
+---
+# プロジェクト方針（最重要）
+- Node / npm / Yarn / pnpm を導入しない。package.json を作らない。node_modules を置かない。
+- フレームワーク/ビルドツール（React/Vue/Svelte/Vite/Next など）を導入しない。
+- 依存はゼロ。**純粋な HTML/CSS/プレーンJS** のみで実装する。
+- 外部CDN/外部JS/CSSを使わない（<script src="https://..."> や <link href="https://..."> を禁止）。
+- ES Modules は OK だが **相対パスのみ** を許可（例: `import x from "./x.js"`）。**裸のモジュール指定**（例: `import x from "lodash"`）は禁止。
+- データ永続化は `localStorage` のみ。サーバ通信、外部API叩きはしない。
+- 画像/フォントなどのアセットはローカルに配置する。
+
+# 実装ルール
+- 1ファイル1責務を意識（UI：HTML、見た目：CSS、振る舞い：JS）。
+- JS は副作用の少ない関数化を優先。グローバル汚染は避ける。
+- 互換性：最新の主要ブラウザで動作するプレーンJS（トランスパイル不要）。
+- 画面はアクセシビリティを考慮（ラベル/aria-* 適切に）。
+
+# 生成時の指示（Cursorへのお願い）
+- 依存を提案された場合は**必ず**「依存ゼロの代替」を提案する。
+- CDNコード断片を貼る代わりに、必要であれば**ローカルに置く最小コード**を提示する。
+- 既存ファイル構成（index.html, detail.html, styles.css, app.js）を尊重して差分を提案する。
