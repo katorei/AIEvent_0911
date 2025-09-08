@@ -1,5 +1,5 @@
 ---
-alwaysApply: false
+globs: *.html,*.css,*.js
 ---
 # プロジェクト方針（最重要）
 - Node / npm / Yarn / pnpm を導入しない。package.json を作らない。node_modules を置かない。
