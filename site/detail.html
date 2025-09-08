@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS Manager - 顧客詳細</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><div class="logo">S</div> SaaS Manager</div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="page-header">
+    <a class="backlink" href="index.html">← 戻る</a>
+    <h1 class="page-title">顧客詳細</h1>
+  </div>
+  <p class="page-sub">顧客情報を編集できます</p>
+
+  <div class="grid grid-cols-2">
+    <div class="card">
+      <div class="section">
+        <h3 style="margin:0 0 8px">基本情報</h3>
+        <div class="form">
+          <div>
+            <label>顧客名</label>
+            <input id="f-name" class="input" value="">
+          </div>
+          <div>
+            <label>メールアドレス</label>
+            <div style="display:flex;align-items:center;gap:8px">
+              <input id="f-email" class="input" value="" style="flex:1">
+              <span class="copy" title="コピー" id="copy-email">📋</span>
+            </div>
+          </div>
+          <div>
+            <label>会社名</label>
+            <input id="f-company" class="input" value="">
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h3 style="margin:0 0 8px">契約情報</h3>
+        <div class="form">
+          <div>
+            <label>ステータス</label>
+            <select id="f-status" class="input">
+              <option value="active">アクティブ</option>
+              <option value="pending">ペンディング</option>
+              <option value="inactive">インアクティブ</option>
+            </select>
+          </div>
+          <div>
+            <label>プラン</label>
+            <select id="f-plan" class="input">
+              <option value="pro">Pro</option>
+              <option value="basic">Basic</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0 0 8px">その他</h3>
+        <div class="form">
+          <div>
+            <label>メモ</label>
+            <textarea id="f-memo" placeholder="顧客に関するメモや注意事項を記入してください"></textarea>
+          </div>
+          <div>
+            <label>通知を有効にする</label>
+            <div id="f-notify" class="switch"><div class="dot"></div></div>
+            <div class="footer-note">この顧客に関する更新通知を受け取ります</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="card">
+      <div class="section">
+        <h3 style="margin:0 0 8px">アクション</h3>
+        <div class="actions">
+          <button id="btn-save" class="btn btn-primary">💾 保存</button>
+          <button id="btn-delete" class="btn btn-danger">🗑 削除</button>
+        </div>
+      </div>
+      <div class="section">
+        <h3 style="margin:0 0 8px">統計情報</h3>
+        <div class="statchip">
+          <div class="statchip-title">最終ログイン</div>
+          <div id="stat-lastlogin" class="statchip-val mono">—</div>
+        </div>
+        <div class="statchip">
+          <div class="statchip-title">作成日</div>
+          <div id="stat-created" class="statchip-val mono">—</div>
+        </div>
+        <div class="statchip">
+          <div class="statchip-title">顧客ID</div>
+          <div id="stat-id" class="statchip-val mono">—</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

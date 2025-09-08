@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS Manager - 顧客一覧</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><div class="logo">S</div> SaaS Manager</div>
+      <nav class="nav">
+        <strong>顧客管理</strong>
+        <a href="#">分析</a>
+        <a href="#">設定</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">顧客管理</h1>
+    <p class="page-sub">すべての顧客を管理し、詳細情報を編集できます</p>
+
+    <div class="card">
+      <div class="section searchbar">
+        <input id="search" placeholder="顧客名、メール、会社名で検索…" />
+        <a class="btn btn-primary" href="detail.html">＋ 新規顧客追加</a>
+      </div>
+      <div class="section table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%">顧客名</th>
+              <th style="width:22%">会社名</th>
+              <th style="width:20%">メールアドレス</th>
+              <th style="width:12%">ステータス</th>
+              <th style="width:10%">プラン</th>
+              <th style="width:12%">最終ログイン</th>
+              <th style="width:20%">操作</th>
+            </tr>
+          </thead>
+          <tbody id="customer-tbody">
+            <!-- JSが行を描画します -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
