@@ -3,14 +3,14 @@ const STORAGE_KEY = 'saas_customers_v1';
 
 function seedData(){
   return [
-    {id:'c1', name:'田中太郎', company:'株式会社サンプル', email:'tanaka@example.com', status:'active', plan:'pro', lastLogin:'2024-12-15', createdAt:'2024-01-15', memo:'', notify:true},
-    {id:'c2', name:'佐藤花子', company:'佐藤商事株式会社', email:'sato@company.co.jp', status:'active', plan:'enterprise', lastLogin:'2024-12-14', createdAt:'2024-02-10', memo:'', notify:false},
-    {id:'c3', name:'山田一郎', company:'テックコーポレーション', email:'yamada@tech-corp.jp', status:'pending', plan:'basic', lastLogin:'2024-12-10', createdAt:'2024-03-01', memo:'', notify:false},
-    {id:'c4', name:'鈴木美咲', company:'デザインスタジオ合同会社', email:'suzuki@design-studio.com', status:'active', plan:'pro', lastLogin:'2024-12-13', createdAt:'2024-01-30', memo:'', notify:true},
-    {id:'c5', name:'高橋健', company:'スタートアップ株式会社', email:'takahashi@startup.io', status:'inactive', plan:'basic', lastLogin:'2024-11-28', createdAt:'2024-04-04', memo:'', notify:false},
-    {id:'c6', name:'伊藤真理', company:'コンサルティングファーム', email:'ito@consulting.jp', status:'active', plan:'enterprise', lastLogin:'2024-12-15', createdAt:'2024-05-10', memo:'', notify:true},
-    {id:'c7', name:'渡辺進一', company:'製造業株式会社', email:'watanabe@manufacturing.com', status:'pending', plan:'pro', lastLogin:'2024-12-12', createdAt:'2024-06-18', memo:'', notify:false},
-    {id:'c8', name:'中村あき', company:'リテール株式会社', email:'nakamura@retail.co.jp', status:'active', plan:'basic', lastLogin:'2024-12-14', createdAt:'2024-07-22', memo:'', notify:true}
+    {id:'c1', name:'田中太郎', company:'株式会社サンプル', email:'tanaka@example.test', status:'active', plan:'pro', lastLogin:'2024-12-15', createdAt:'2024-01-15', memo:'', notify:true},
+    {id:'c2', name:'佐藤花子', company:'佐藤商事株式会社', email:'sato@company.test', status:'active', plan:'enterprise', lastLogin:'2024-12-14', createdAt:'2024-02-10', memo:'', notify:false},
+    {id:'c3', name:'山田一郎', company:'テックコーポレーション', email:'yamada@tech-corp.test', status:'pending', plan:'basic', lastLogin:'2024-12-10', createdAt:'2024-03-01', memo:'', notify:false},
+    {id:'c4', name:'鈴木美咲', company:'デザインスタジオ合同会社', email:'suzuki@design-studio.test', status:'active', plan:'pro', lastLogin:'2024-12-13', createdAt:'2024-01-30', memo:'', notify:true},
+    {id:'c5', name:'高橋健', company:'スタートアップ株式会社', email:'takahashi@startup.test', status:'inactive', plan:'basic', lastLogin:'2024-11-28', createdAt:'2024-04-04', memo:'', notify:false},
+    {id:'c6', name:'伊藤真理', company:'コンサルティングファーム', email:'ito@consulting.test', status:'active', plan:'enterprise', lastLogin:'2024-12-15', createdAt:'2024-05-10', memo:'', notify:true},
+    {id:'c7', name:'渡辺進一', company:'製造業株式会社', email:'watanabe@manufacturing.test', status:'pending', plan:'pro', lastLogin:'2024-12-12', createdAt:'2024-06-18', memo:'', notify:false},
+    {id:'c8', name:'中村あき', company:'リテール株式会社', email:'nakamura@retail.test', status:'active', plan:'basic', lastLogin:'2024-12-14', createdAt:'2024-07-22', memo:'', notify:true}
   ];
 }
 
