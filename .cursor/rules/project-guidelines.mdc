@@ -1,12 +1,13 @@
 ---
-globs: *.html, *.css, *.js
+globs: *.html,*.css,*.js
+alwaysApply: false
 ---
+
 # プロジェクト方針（最重要）
 - Node / npm / Yarn / pnpm を導入しない。package.json を作らない。node_modules を置かない。
 - フレームワーク/ビルドツール（React/Vue/Svelte/Vite/Next など）を導入しない。
 - 依存はゼロ。**純粋な HTML/CSS/プレーンJS** のみで実装する。
 - 外部CDN/外部JS/CSSを使わない（<script src="https://..."> や <link href="https://..."> を禁止）。
-- ES Modules は OK だが **相対パスのみ** を許可（例: `import x from "./x.js"`）。**裸のモジュール指定**（例: `import x from "lodash"`）は禁止。
 - データ永続化は `localStorage` のみ。サーバ通信、外部API叩きはしない。
 - 画像/フォントなどのアセットはローカルに配置する。
 
