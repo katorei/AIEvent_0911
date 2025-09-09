@@ -8,9 +8,9 @@
 
 - https://cursor.com/ja
 
-### 2. 教材のファイルをGithubからダウンロード
+### 2. 教材のファイルをGitHubからダウンロード
 
-- Githubの右上のCodeを押してください
+- GitHubの右上のCodeを押してください
 - ``Download ZIP`` からzipファイルをダウンロードしてください
 - <img width="300" height="366" alt="image" src="https://github.com/user-attachments/assets/73b8ce64-4716-468d-bd43-4cc98564bdc1" />
 
@@ -19,12 +19,12 @@
 
 - 教材のzipファイルを解凍
 - Cursorを開く
-- ファイル＞フォルダーを開く…から、「site」フォルダを開く
+- ファイル>フォルダーを開く…から、解凍した教材のフォルダを開く
 
 ### 4. 教材をプレビュー
 
-- siteフォルダを開く
-- 「index.html」を開く
+- 教材のフォルダを開く
+- 「index.html」をブラウザで開く
 - 顧客管理画面が開けばOK
 
 ### 5. Cursorチャットの使い方
@@ -92,3 +92,7 @@
 <details>
 <summary> 要望から仕様作成 </summary>
 </details>
+
+## 免責事項
+
+本教材で使用されている会社名、メールアドレス、その他の個人情報はすべて架空のものです。実在する企業、団体、個人とは一切関係ありません。
