@@ -258,6 +258,40 @@ td .mono {
   content: "⋯";
 }
 
+.kebab-menu {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 4px 0;
+  min-width: 120px;
+}
+
+.kebab-item {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.kebab-item:hover {
+  background: #f8fafc;
+}
+
+.kebab-item.delete-btn {
+  color: var(--red);
+}
+
+.kebab-item.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
 .grid {
   display: grid;
   gap: 16px;

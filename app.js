@@ -55,7 +55,7 @@ function renderIndex(){
     <tr data-id="${c.id}">
       <td>${c.name}</td>
       <td>${c.company||'—'}</td>
-      <td>${c.email} <span class="copy" data-copy="${c.email}">📋</span></td>
+      <td>${c.email}</td>
       <td>${badgeStatusHTML(c.status)}</td>
       <td>${badgePlanHTML(c.plan)}</td>
       <td class="mono">${c.lastLogin||'—'}</td>
@@ -63,16 +63,17 @@ function renderIndex(){
     </tr>
   `).join('');
 
-  // row click
-  tbody.querySelectorAll('tr').forEach(tr => {
-    tr.addEventListener('click', (e) => {
-      if(e.target.closest('.copy')) return;
-      location.href = `detail.html?id=${tr.dataset.id}`;
-    });
-  });
+  // row click - disabled
+  // tbody.querySelectorAll('tr').forEach(tr => {
+  //   tr.addEventListener('click', (e) => {
+  //     if(e.target.closest('.copy')) return;
+  //     location.href = `detail.html?id=${tr.dataset.id}`;
+  //   });
+  // });
 
   setupSearch();
-  setupCopy();
+  setupKebabMenu();
+  // setupCopy(); // disabled
 }
 
 function setupSearch(){
@@ -94,6 +95,63 @@ async function copyToClipboard(text){
   }catch{
     return false;
   }
+}
+
+function setupKebabMenu(){
+  document.querySelectorAll('.kebab').forEach(kebab => {
+    kebab.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      // 既存のメニューを閉じる
+      document.querySelectorAll('.kebab-menu').forEach(menu => {
+        menu.remove();
+      });
+      
+      // 新しいメニューを作成
+      const menu = document.createElement('div');
+      menu.className = 'kebab-menu';
+      menu.innerHTML = `
+        <button class="kebab-item edit-btn" data-id="${kebab.closest('tr').dataset.id}">編集</button>
+        <button class="kebab-item delete-btn" data-id="${kebab.closest('tr').dataset.id}">削除</button>
+      `;
+      
+      // メニューの位置を設定
+      const rect = kebab.getBoundingClientRect();
+      menu.style.position = 'absolute';
+      menu.style.top = `${rect.bottom + 4}px`;
+      menu.style.right = `${window.innerWidth - rect.right}px`;
+      menu.style.zIndex = '1000';
+      
+      // メニューを追加
+      document.body.appendChild(menu);
+      
+      // 編集ボタンのイベント
+      menu.querySelector('.edit-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = e.target.dataset.id;
+        location.href = `detail.html?id=${id}`;
+      });
+      
+      // 削除ボタンのイベント
+      menu.querySelector('.delete-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = e.target.dataset.id;
+        if(confirm('この顧客を削除しますか？')) {
+          const list = getCustomers().filter(c => c.id !== id);
+          saveCustomers(list);
+          location.reload();
+        }
+      });
+      
+      // メニュー外をクリックしたら閉じる
+      setTimeout(() => {
+        document.addEventListener('click', function closeMenu() {
+          menu.remove();
+          document.removeEventListener('click', closeMenu);
+        });
+      }, 0);
+    });
+  });
 }
 
 function setupCopy(){
