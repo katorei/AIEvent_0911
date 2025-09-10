@@ -183,6 +183,10 @@ tbody td {
   vertical-align: middle;
 }
 
+tbody tr {
+  cursor: pointer;
+}
+
 tbody tr:hover {
   background: #fafafa;
 }

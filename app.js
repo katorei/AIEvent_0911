@@ -59,20 +59,18 @@ function renderIndex(){
       <td>${badgeStatusHTML(c.status)}</td>
       <td>${badgePlanHTML(c.plan)}</td>
       <td class="mono">${c.lastLogin||'—'}</td>
-      <td><div class="kebab"></div></td>
     </tr>
   `).join('');
 
-  // row click - disabled
-  // tbody.querySelectorAll('tr').forEach(tr => {
-  //   tr.addEventListener('click', (e) => {
-  //     if(e.target.closest('.copy')) return;
-  //     location.href = `detail.html?id=${tr.dataset.id}`;
-  //   });
-  // });
+  // 行クリックで詳細へ
+  tbody.querySelectorAll('tr').forEach(tr => {
+    tr.addEventListener('click', (e) => {
+      location.href = `detail.html?id=${tr.dataset.id}`;
+    });
+  });
 
   setupSearch();
-  setupKebabMenu();
+  // 操作列削除に伴いメニュー処理は不要
   // setupCopy(); // disabled
 }
 
